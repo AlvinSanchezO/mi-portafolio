@@ -263,6 +263,45 @@ img {
     color: var(--accent-color);
 }
 
+/*=============== COMPONENTE: TECNOLOGÍAS ===============*/
+.tech__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+    gap: 2rem 1.5rem;
+    justify-items: center;
+    text-align: center;
+}
+
+.tech__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    transition: transform 0.3s;
+}
+
+.tech__item i {
+    font-size: 3rem; /* Tamaño del icono */
+    color: var(--text-color-light);
+    transition: color 0.3s;
+}
+
+.tech__item span {
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+    transition: color 0.3s;
+}
+
+.tech__item:hover {
+    transform: translateY(-5px);
+}
+
+.tech__item:hover i,
+.tech__item:hover span {
+    color: var(--accent-color);
+}
+
+
 /*=============== COMPONENTE: BLOG ===============*/
 .blog__container {
     display: grid;
