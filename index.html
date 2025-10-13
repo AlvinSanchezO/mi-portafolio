@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alvin Cesar Sanchez Ochoa Alvarez | Desarrollador de Backend</title>
+    <meta name="description" content="Portafolio profesional de [Alvin Cesar Sanchez Ochoa Alvarez], desarrollador de software especializado en backend con .NET, Node.js, SQL y MongoDB.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="header">
+        <nav class="nav container">
+            <a href="#inicio" class="nav__logo">Alvin Cesar Sanchez Ochoa Alvarez</a>
+            <ul class="nav__menu">
+                <li class="nav__item"><a href="#proyectos" class="nav__link">Proyectos</a></li>
+                <li class="nav__item"><a href="#tecnologias" class="nav__link">Tecnologías</a></li>
+                <li class="nav__item"><a href="#blog" class="nav__link">Blog</a></li>
+                <li class="nav__item"><a href="#contacto" class="nav__link">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero section" id="inicio">
+            <div class="hero__container container">
+                <h1 class="hero__title">Hola, soy Alvin Cesar Sanchez Ochoa Alvarez</h1>
+                <h2 class="hero__subtitle" id="typewriter">Desarrollador de Backend</h2>
+                <p class="hero__description">
+                    Construyo la lógica y la infraestructura robusta que hace que las aplicaciones funcionen. Especializado en crear APIs eficientes y seguras con Node.js y .NET.
+                </p>
+                <div class="hero__cta">
+                    <a href="assets/cv/Tu_Nombre_CV.pdf" download class="button">Descargar CV</a>
+                    <div class="hero__socials">
+                        <a href="https://github.com/tu-usuario" target="_blank" class="social__link">GitHub</a>
+                        <a href="https://linkedin.com/in/tu-usuario" target="_blank" class="social__link">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects section" id="proyectos">
+            <h2 class="section__title">Proyectos Destacados</h2>
+            <div class="projects__container container">
+                <article class="card">
+                    <div class="card__content">
+                        <h3 class="card__title">API de Gestión de Pedidos</h3>
+                        <p class="card__description">
+                            Una API RESTful construida con C# y .NET para manejar la lógica de un e-commerce, asegurando la integridad de datos con SQL Server.
+                        </p>
+                        <p class="card__challenge">
+                            <strong>Reto Técnico:</strong> Implementar transacciones ACID para garantizar que la creación de un pedido y la actualización del inventario fueran una operación atómica.
+                        </p>
+                        <ul class="card__tech-list">
+                            <li class="tech-item">C#</li>
+                            <li class="tech-item">.NET</li>
+                            <li class="tech-item">SQL Server</li>
+                            <li class="tech-item">JWT</li>
+                        </ul>
+                        <div class="card__links">
+                            <a href="https://github.com/tu-usuario/tu-repo-proyecto-1" target="_blank" class="card__link">Ver en GitHub</a>
+                            <a href="#" target="_blank" class="card__link">Ver Documentación (Swagger)</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card__content">
+                        <h3 class="card__title">API para Blog de Contenido</h3>
+                        <p class="card__description">
+                           API para un CMS de blogs usando Node.js, Express y MongoDB, optimizada para flexibilidad y escalabilidad de contenido.
+                        </p>
+                         <p class="card__challenge">
+                            <strong>Reto Técnico:</strong> Diseñar un esquema en Mongoose que permitiera poblar eficientemente comentarios anidados y datos del autor sin sacrificar el rendimiento.
+                        </p>
+                        <ul class="card__tech-list">
+                            <li class="tech-item">Node.js</li>
+                            <li class="tech-item">Express</li>
+                            <li class="tech-item">MongoDB</li>
+                            <li class="tech-item">Mongoose</li>
+                        </ul>
+                        <div class="card__links">
+                            <a href="https://github.com/tu-usuario/tu-repo-proyecto-2" target="_blank" class="card__link">Ver en GitHub</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        
+        <section class="tech section" id="tecnologias">
+            <h2 class="section__title">Mi Stack Tecnológico</h2>
+            <div class="tech__container container">
+                <p>C#, .NET, Node.js, Express, SQL, MongoDB, Git, GitHub, Jira, HTML5, CSS3, JavaScript</p>
+            </div>
+        </section>
+
+        <section class="blog section" id="blog">
+            <h2 class="section__title">Mi Blog</h2>
+            <p class="section__subtitle">Pensamientos sobre código, arquitectura y desarrollo.</p>
+            <div class="blog__container container" id="blog-posts-container">
+                </div>
+        </section>
+
+        <section class="contact section" id="contacto">
+            <div class="contact__container container">
+                <h2 class="section__title">Hablemos</h2>
+                <p class="contact__description">
+                    Estoy buscando mi primera oportunidad como desarrollador de backend. Si crees que mi perfil encaja en tu equipo, me encantaría conversar.
+                </p>
+                <a href="mailto:tu.email@profesional.com" class="button button--contact">Envíame un correo</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container container">
+            <p>&copy; 2025 [Tu Nombre]. Diseñado y construido por mí.</p>
+            <div class="footer__socials">
+                <a href="https://github.com/tu-usuario" target="_blank" class="social__link">GitHub</a>
+                <a href="https://linkedin.com/in/tu-usuario" target="_blank" class="social__link">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="blog-modal">
+        <div class="modal__content">
+            <button class="modal__close" id="modal-close-btn" aria-label="Cerrar ventana modal">&times;</button>
+            <h2 class="modal__title" id="modal-title"></h2>
+            <p class="modal__date" id="modal-date"></p>
+            <div class="modal__body" id="modal-body">
+                </div>
+        </div>
+    </div>
+
+    <script src="js/blog-posts.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

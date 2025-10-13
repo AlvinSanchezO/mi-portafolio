@@ -1,0 +1,432 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Inter:wght@400;700&display=swap');
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+  /*========== Colores ==========*/
+  --body-color: #121212;
+  --container-color: #1E1E1E;
+  --title-color: #E0E0E0;
+  --text-color: #BDBDBD;
+  --text-color-light: #828282;
+  --border-color: #333333;
+  --accent-color: #00F5C4; /* Turquesa moderno */
+  --accent-color-hover: #00C7A1;
+
+  /*========== Tipografía ==========*/
+  --body-font: 'Inter', sans-serif;
+  --code-font: 'Fira Code', monospace;
+
+  --h1-font-size: 2.5rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+
+  /*========== Márgenes ==========*/
+  --mb-0-5: .5rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  
+  /*========== z-index ==========*/
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/*=============== BASE ===============*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--body-color);
+  color: var(--text-color);
+}
+
+h1, h2, h3 {
+  color: var(--title-color);
+  font-weight: 700;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== CLASES REUTILIZABLES ===============*/
+.container {
+  max-width: 968px;
+  margin-left: var(--mb-1-5);
+  margin-right: var(--mb-1-5);
+}
+
+.section {
+  padding: 4rem 0 2rem;
+}
+
+.section__title {
+  font-size: var(--h2-font-size);
+  margin-bottom: var(--mb-2);
+  text-align: center;
+}
+
+.section__subtitle {
+    display: block;
+    font-size: var(--small-font-size);
+    color: var(--accent-color);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/*=============== COMPONENTE: HEADER / NAVEGACIÓN ===============*/
+.header {
+  width: 100%;
+  background-color: rgba(18, 18, 18, 0.8);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-fixed);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.nav {
+  height: 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo,
+.nav__link {
+  color: var(--title-color);
+  font-weight: 500;
+  transition: color .3s;
+}
+
+.nav__link:hover,
+.nav__link.active-link {
+  color: var(--accent-color);
+}
+
+.nav__menu {
+  display: flex;
+  gap: 1.5rem;
+}
+
+/*=============== COMPONENTE: HERO / INICIO ===============*/
+.hero {
+    padding-top: 6rem;
+}
+
+.hero__container {
+    text-align: center;
+}
+
+.hero__title {
+    font-size: var(--h1-font-size);
+    margin-bottom: var(--mb-0-5);
+}
+
+.hero__subtitle {
+    font-size: var(--h3-font-size);
+    font-family: var(--code-font);
+    color: var(--accent-color);
+    margin-bottom: var(--mb-1-5);
+    min-height: 2rem; /* Espacio para el efecto de escritura */
+}
+
+.hero__description {
+    max-width: 600px;
+    margin: 0 auto var(--mb-2);
+}
+
+.hero__cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.hero__socials {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.social__link {
+    color: var(--text-color-light);
+    transition: color .3s;
+}
+.social__link:hover {
+    color: var(--accent-color);
+}
+
+
+/*=============== COMPONENTE: BOTONES ===============*/
+.button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--body-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    transition: background-color .3s, transform .3s;
+}
+
+.button:hover {
+    background-color: var(--accent-color-hover);
+    transform: translateY(-2px);
+}
+
+.button--contact {
+    font-size: var(--h3-font-size);
+}
+
+/*=============== COMPONENTE: PROYECTOS (TARJETAS) ===============*/
+.projects__container {
+    display: grid;
+    gap: 2rem;
+}
+
+.card {
+    background-color: var(--container-color);
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 245, 196, 0.1);
+}
+
+.card__title {
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-1);
+}
+
+.card__description, .card__challenge {
+    margin-bottom: var(--mb-1);
+}
+
+.card__challenge strong {
+    color: var(--accent-color);
+}
+
+.card__tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: var(--mb-1-5);
+}
+
+.tech-item {
+    background-color: rgba(0, 245, 196, 0.1);
+    color: var(--accent-color);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: var(--small-font-size);
+    font-family: var(--code-font);
+}
+
+.card__links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.card__link {
+    color: var(--title-color);
+    font-weight: 500;
+    transition: color .3s;
+}
+
+.card__link:hover {
+    color: var(--accent-color);
+}
+
+/*=============== COMPONENTE: BLOG ===============*/
+.blog__container {
+    display: grid;
+    gap: 2rem;
+}
+
+.blog-card {
+    background-color: var(--container-color);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 245, 196, 0.1);
+}
+
+.blog-card__title {
+    font-size: var(--h3-font-size);
+    margin-bottom: var(--mb-0-5);
+}
+
+.blog-card__date {
+    font-size: var(--small-font-size);
+    color: var(--text-color-light);
+    margin-bottom: var(--mb-1);
+}
+
+/*=============== COMPONENTE: MODAL DEL BLOG ===============*/
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: var(--z-modal);
+}
+
+.modal.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal__content {
+    background-color: var(--body-color);
+    padding: 2.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    max-width: 700px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: scale(0.9);
+    transition: transform 0.3s;
+}
+
+.modal.is-open .modal__content {
+    transform: scale(1);
+}
+
+.modal__close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 2rem;
+    font-weight: bold;
+    background: none;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal__close:hover {
+    color: var(--accent-color);
+}
+
+.modal__title { margin-bottom: var(--mb-0-5); }
+.modal__date { color: var(--text-color-light); margin-bottom: var(--mb-1-5); }
+.modal__body p { margin-bottom: var(--mb-1); line-height: 1.7; }
+.modal__body h2 { margin-top: var(--mb-1-5); margin-bottom: var(--mb-1); color: var(--accent-color); }
+.modal__body pre {
+    background-color: var(--container-color);
+    padding: 1rem;
+    border-radius: 0.25rem;
+    overflow-x: auto;
+    margin-bottom: 1rem;
+    border: 1px solid var(--border-color);
+}
+.modal__body code { font-family: var(--code-font); color: var(--title-color); }
+.modal__body strong { color: var(--accent-color); font-weight: bold; }
+
+/*=============== COMPONENTE: CONTACTO ===============*/
+.contact__container {
+    text-align: center;
+}
+
+.contact__description {
+    max-width: 500px;
+    margin: 0 auto var(--mb-2);
+}
+
+/*=============== COMPONENTE: FOOTER ===============*/
+.footer {
+    border-top: 1px solid var(--border-color);
+    padding: 2rem 0;
+}
+
+.footer__container {
+    text-align: center;
+}
+
+.footer__container p {
+    margin-bottom: var(--mb-1);
+    color: var(--text-color-light);
+}
+
+.footer__socials {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/*=============== MEDIA QUERIES (RESPONSIVIDAD) ===============*/
+/* Para dispositivos medianos (tablets) */
+@media screen and (min-width: 768px) {
+    body {
+        font-size: var(--normal-font-size);
+    }
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .section {
+        padding: 6rem 0 2rem;
+    }
+
+    .hero__cta {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .projects__container,
+    .blog__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Para dispositivos grandes (desktop) */
+@media screen and (min-width: 992px) {
+    .nav {
+        height: 5rem;
+    }
+}
