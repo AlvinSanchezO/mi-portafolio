@@ -199,6 +199,28 @@ img {
     font-size: var(--h3-font-size);
 }
 
+/*=============== COMPONENTE: SOBRE MÍ ===============*/
+.about__container {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+}
+
+.about__image-container {
+    justify-self: center;
+}
+
+.about__image {
+    width: 250px;
+    border-radius: 50%; /* Le da un estilo circular y moderno */
+    border: 3px solid var(--accent-color);
+}
+
+.about__description {
+    margin-bottom: var(--mb-1-5);
+    line-height: 1.7;
+}
+
 /*=============== COMPONENTE: PROYECTOS (TARJETAS) ===============*/
 .projects__container {
     display: grid;
@@ -437,6 +459,18 @@ img {
     gap: 1.5rem;
 }
 
+/*=============== ANIMACIONES DE SCROLL ===============*/
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /*=============== MEDIA QUERIES (RESPONSIVIDAD) ===============*/
 /* Para dispositivos medianos (tablets) */
 @media screen and (min-width: 768px) {
@@ -450,6 +484,11 @@ img {
 
     .section {
         padding: 6rem 0 2rem;
+    }
+
+    .about__container {
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
     }
 
     .hero__cta {
