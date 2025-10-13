@@ -1,37 +1,44 @@
-/*=============== GOOGLE FONTS ===============*/
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&family=Inter:wght@400;700&display=swap');
-
 /*=============== VARIABLES CSS ===============*/
 :root {
-  /*========== Colores ==========*/
+  /*========== Colores - Tema Claro (Por Defecto) ==========*/
+  --body-color: #F0F2F5;
+  --container-color: #FFFFFF;
+  --title-color: #1C1E21;
+  --text-color: #555555;
+  --text-color-light: #65676B;
+  --border-color: #E4E6EB;
+  --accent-color: #00887A;
+  --accent-color-hover: #00695C;
+  --tech-item-bg: rgba(0, 136, 122, 0.1);
+
+  /*========== Tipografía y otros (sin cambios) ==========*/
+  --body-font: 'Inter', sans-serif;
+  --code-font: 'Fira Code', monospace;
+  --h1-font-size: 2.5rem;
+  --h2-font-size: 1.5rem;
+  --h3-font-size: 1.25rem;
+  --normal-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --mb-0-5: .5rem;
+  --mb-1: 1rem;
+  --mb-1-5: 1.5rem;
+  --mb-2: 2rem;
+  --z-fixed: 100;
+}
+
+/* Sobrescribir TODAS las variables cuando el body tiene la clase .dark-theme */
+body.dark-theme {
   --body-color: #121212;
   --container-color: #1E1E1E;
   --title-color: #E0E0E0;
   --text-color: #BDBDBD;
   --text-color-light: #828282;
   --border-color: #333333;
-  --accent-color: #00F5C4; /* Turquesa moderno */
+  --accent-color: #00F5C4;
   --accent-color-hover: #00C7A1;
-
-  /*========== Tipografía ==========*/
-  --body-font: 'Inter', sans-serif;
-  --code-font: 'Fira Code', monospace;
-
-  --h1-font-size: 2.5rem;
-  --h2-font-size: 1.5rem;
-  --h3-font-size: 1.25rem;
-  --normal-font-size: 1rem;
-  --small-font-size: 0.875rem;
-
-  /*========== Márgenes ==========*/
-  --mb-0-5: .5rem;
-  --mb-1: 1rem;
-  --mb-1-5: 1.5rem;
-  --mb-2: 2rem;
-  
-  /*========== z-index ==========*/
-  --z-fixed: 100;
+  --tech-item-bg: rgba(0, 245, 196, 0.1);
 }
+
 
 /*=============== BASE ===============*/
 * {
@@ -49,6 +56,7 @@ body {
   font-size: var(--normal-font-size);
   background-color: var(--body-color);
   color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 h1, h2, h3 {
@@ -86,24 +94,21 @@ img {
   text-align: center;
 }
 
-.section__subtitle {
-    display: block;
-    font-size: var(--small-font-size);
-    color: var(--accent-color);
-    text-align: center;
-    margin-bottom: 2rem;
-}
-
 /*=============== COMPONENTE: HEADER / NAVEGACIÓN ===============*/
 .header {
   width: 100%;
-  background-color: rgba(18, 18, 18, 0.8);
+  background-color: hsla(0, 0%, 100%, 0.8); /* Base color for transition */
   backdrop-filter: blur(10px);
   position: fixed;
   top: 0;
   left: 0;
   z-index: var(--z-fixed);
   border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+body.dark-theme .header {
+  background-color: rgba(18, 18, 18, 0.8);
 }
 
 .nav {
@@ -128,6 +133,27 @@ img {
 .nav__menu {
   display: flex;
   gap: 1.5rem;
+  align-items: center;
+}
+
+/*=============== SELECTOR DE TEMA ===============*/
+.theme-switcher {
+    display: flex;
+    align-items: center;
+}
+
+.theme-button {
+    background: none;
+    border: none;
+    color: var(--title-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s;
+}
+
+.theme-button:hover {
+    color: var(--accent-color);
 }
 
 /*=============== COMPONENTE: HERO / INICIO ===============*/
@@ -149,7 +175,7 @@ img {
     font-family: var(--code-font);
     color: var(--accent-color);
     margin-bottom: var(--mb-1-5);
-    min-height: 2rem; /* Espacio para el efecto de escritura */
+    min-height: 2rem;
 }
 
 .hero__description {
@@ -194,10 +220,6 @@ img {
     transform: translateY(-2px);
 }
 
-.button--contact {
-    font-size: var(--h3-font-size);
-}
-
 /*=============== COMPONENTE: SOBRE MÍ ===============*/
 .about__container {
     display: grid;
@@ -211,7 +233,7 @@ img {
 
 .about__image {
     width: 250px;
-    border-radius: 50%; /* Le da un estilo circular y moderno */
+    border-radius: 50%;
     border: 3px solid var(--accent-color);
 }
 
@@ -231,11 +253,15 @@ img {
     padding: 1.5rem;
     border: 1px solid var(--border-color);
     border-radius: 0.5rem;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s, border-color 0.3s;
 }
 
 .card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-theme .card:hover {
     box-shadow: 0 4px 20px rgba(0, 245, 196, 0.1);
 }
 
@@ -260,7 +286,7 @@ img {
 }
 
 .tech-item {
-    background-color: rgba(0, 245, 196, 0.1);
+    background-color: var(--tech-item-bg);
     color: var(--accent-color);
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
@@ -302,7 +328,7 @@ img {
 }
 
 .tech__item i {
-    font-size: 3rem; /* Tamaño del icono */
+    font-size: 3rem;
     color: var(--text-color-light);
     transition: color 0.3s;
 }
@@ -328,14 +354,57 @@ img {
 }
 
 .contact__description {
-    max-width: 500px;
+    max-width: 600px;
     margin: 0 auto var(--mb-2);
+}
+
+.contact__options {
+    display: grid;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.contact__option {
+    background-color: var(--container-color);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-align: left;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.contact__option-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--accent-color);
+    flex-shrink: 0;
+}
+
+.contact__option-title {
+    font-size: var(--normal-font-size);
+    color: var(--title-color);
+}
+
+.contact__option-link {
+    color: var(--text-color-light);
+    font-size: var(--small-font-size);
+    transition: color 0.3s;
+}
+
+.contact__option-link:hover {
+    color: var(--accent-color);
 }
 
 /*=============== COMPONENTE: FOOTER ===============*/
 .footer {
     border-top: 1px solid var(--border-color);
     padding: 2rem 0;
+    transition: border-color 0.3s;
 }
 
 .footer__container {
@@ -366,11 +435,7 @@ img {
 }
 
 /*=============== MEDIA QUERIES (RESPONSIVIDAD) ===============*/
-/* Para dispositivos medianos (tablets) */
 @media screen and (min-width: 768px) {
-    body {
-        font-size: var(--normal-font-size);
-    }
     .container {
         margin-left: auto;
         margin-right: auto;
@@ -390,13 +455,15 @@ img {
         justify-content: center;
     }
 
-    .projects__container,
-    .blog__container {
+    .projects__container {
         grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact__options {
+        grid-template-columns: 1fr 1fr;
     }
 }
 
-/* Para dispositivos grandes (desktop) */
 @media screen and (min-width: 992px) {
     .nav {
         height: 5rem;

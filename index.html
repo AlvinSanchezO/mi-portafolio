@@ -30,6 +30,13 @@
                 <li class="nav__item"><a href="#proyectos" class="nav__link">Proyectos</a></li>
                 <li class="nav__item"><a href="#tecnologias" class="nav__link">Tecnologías</a></li>
                 <li class="nav__item"><a href="#contacto" class="nav__link">Contacto</a></li>
+                <li class="nav__item">
+                    <div class="theme-switcher">
+                        <button class="theme-button" id="theme-button" aria-label="Cambiar tema">
+                            <svg id="theme-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                        </button>
+                    </div>
+                </li>
             </ul>
         </nav>
     </header>
@@ -144,9 +151,25 @@
             <div class="contact__container container">
                 <h2 class="section__title">Hablemos</h2>
                 <p class="contact__description">
-                    Estoy buscando mi primera oportunidad como desarrollador de backend. Si crees que mi perfil encaja en tu equipo, me encantaría conversar.
+                    Estoy buscando activamente mi primera oportunidad como desarrollador. Si mi perfil te parece interesante, no dudes en contactarme.
                 </p>
-                <a href="mailto:tu.email@profesional.com" class="button button--contact">Envíame un correo</a>
+
+                <div class="contact__options">
+                    <div class="contact__option fade-in">
+                        <svg class="contact__option-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        <div class="contact__option-content">
+                            <h3 class="contact__option-title">Correo Electrónico</h3>
+                            <a href="mailto:tu.email@profesional.com" class="contact__option-link">tu.email@profesional.com</a>
+                        </div>
+                    </div>
+                    <div class="contact__option fade-in">
+                        <svg class="contact__option-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        <div class="contact__option-content">
+                            <h3 class="contact__option-title">LinkedIn</h3>
+                            <a href="https://linkedin.com/in/tu-usuario" target="_blank" class="contact__option-link">Envíame un mensaje</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
