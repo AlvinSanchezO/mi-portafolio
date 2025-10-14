@@ -12,6 +12,8 @@
  * ---------------------------------
  * NAVIGATION MODULE
  * ---------------------------------
+ * Handles navigation-related functionalities like highlighting the
+ * active link in the navbar based on scroll position.
  */
 const NavModule = (() => {
     const navLinks = document.querySelectorAll('.nav__link');
@@ -46,6 +48,7 @@ const NavModule = (() => {
  * ---------------------------------
  * TYPEWRITER EFFECT MODULE
  * ---------------------------------
+ * Creates a simple typing animation for a given element.
  */
 const TypewriterModule = (() => {
     const start = (element) => {
@@ -70,6 +73,8 @@ const TypewriterModule = (() => {
  * ---------------------------------
  * SCROLL ANIMATION MODULE
  * ---------------------------------
+ * Uses Intersection Observer API to add animations to elements as they
+ * enter the viewport.
  */
 const ScrollAnimationModule = (() => {
     const elementsToAnimate = document.querySelectorAll('.fade-in');
@@ -101,6 +106,7 @@ const ScrollAnimationModule = (() => {
  * ---------------------------------
  * THEME SWITCHER MODULE
  * ---------------------------------
+ * Manages the light/dark/system theme functionality.
  */
 const ThemeModule = (() => {
     const themeButton = document.getElementById('theme-button');
@@ -162,5 +168,5 @@ document.addEventListener('DOMContentLoaded', () => {
     ScrollAnimationModule.initialize();
     ThemeModule.initialize();
     
-    console.log("Portfolio inicializado correctamente. ¡Listo para impresionar! ✨");
+    console.log("Portfolio initialized successfully. Ready to impress! ✨");
 });
